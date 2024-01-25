@@ -19,7 +19,7 @@ public class KadaiFirstController {
         int date =  Integer.parseInt(nichi);
         Calendar cal = Calendar.getInstance();
         cal.set(year, month, date);
-        String weekDay[] = {"Saturday","Sunday","Monday","Tuesday","Wednesday","Tursday","Friday"};
+        String weekDay[] = {"Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"};
         return weekDay[cal.get(Calendar.DAY_OF_WEEK)];
         }
 
@@ -28,29 +28,26 @@ public class KadaiFirstController {
         int resPlus = 0;
         resPlus = val1 + val2;
         return "実行結果：" + resPlus;
-    }
+        }
 
     @GetMapping("/minus/{val1}/{val2}")
     public String calcMinus(@PathVariable int val1, @PathVariable int val2) {
         int resMinus = 0;
         resMinus = val1 - val2;
         return "実行結果：" + resMinus;
-    }
+        }
 
     @GetMapping("/times/{val1}/{val2}")
     public String calcTimes(@PathVariable int val1, @PathVariable int val2) {
         int resTimes = 0;
         resTimes = val1 * val2;
         return "実行結果：" + resTimes;
-    }
+        }
 
     @GetMapping("/divide/{val1}/{val2}")
     public String calcDvide(@PathVariable int val1, @PathVariable int val2) {
         int resDivide = 0;
         resDivide = val1 / val2;
         return "実行結果：" + resDivide;
-    }
-
-
-
+        }
 }
