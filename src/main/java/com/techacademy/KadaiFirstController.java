@@ -10,15 +10,15 @@ public class KadaiFirstController {
 
     @GetMapping("/dayofweek/{val1}")
     public String dispDayOfWeek(@PathVariable String val1) {
-        String date = val1;
-        String nen = date.substring(0,4);
-        String tsuki = date.substring(4,6);
-        String nichi = date.substring(6,8);
+        String day = val1;
+        String nen = day.substring(0,4);
+        String tsuki = day.substring(4,6);
+        String nichi = day.substring(6,8);
         int year =  Integer.parseInt(nen);
         int month =  Integer.parseInt(tsuki) -1;
-        int day =  Integer.parseInt(nichi);
+        int date =  Integer.parseInt(nichi);
         Calendar cal = Calendar.getInstance();
-        cal.set(year, month, day);
+        cal.set(year, month, date);
         String weekDay[] = {"Saturday","Sunday","Monday","Tuesday","Wednesday","Tursday","Friday"};
         return weekDay[cal.get(Calendar.DAY_OF_WEEK)];
         }
